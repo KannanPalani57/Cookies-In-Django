@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Introduction Page</h1>
+    {% if not request.COOKIES.visit %}
+      <h3>You are visiting this page first time. From now, I gonna to count(Track) how many time you visit this page. :)</h3>
+    {% else %}
+        <h3>You are visited this page, {{request.COOKIES.visit}} Times</h3> 
+    {% endif %}
+
+    <a href="{% url "deleteTheCookie"%}">Stop Counting The Visits!, Delete The Cookie</a>
+
+
+</body>
+</html>
